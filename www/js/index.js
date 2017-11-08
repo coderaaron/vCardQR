@@ -19,8 +19,8 @@
 var generateButton = document.getElementById("generateButton");
 var qrcode = new QRCode("qrcode", {
     text: '',
-    width: 330,
-    height: 330,
+    width: 325,
+    height: 325,
 });
 
 var app = {
@@ -99,6 +99,7 @@ var app = {
 		vcardString += 'REV:'+n+'\n';
 		vcardString += 'END:VCARD';
 
+		document.getElementById('infoFor').innerHTML = contact.name.formatted;
 		qrcode.clear();
 		qrcode.makeCode(vcardString);
 	},
